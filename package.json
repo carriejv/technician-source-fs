@@ -1,6 +1,6 @@
 {
 	"name": "@technician/fs-config-source",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Access config on your local filesystem with Technician.",
 	"keywords": [
 		"config",
@@ -54,6 +54,7 @@
 		"eslint": "^7.13.0",
 		"mocha": "^8.2.1",
 		"nyc": "^15.1.0",
+		"technician": "^0.1.0",
 		"ts-node": "^9.0.0",
 		"typedoc": "^0.19.2",
 		"typedoc-dark-theme": "0.0.11",
