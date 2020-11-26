@@ -10,17 +10,28 @@ import { FSConfigSourceParams } from '../types/param-types';
  */
 export class FSConfigSource implements ConfigSource {
 
+    /** Root path for all file reads. */
+    private rootPath: string;
+
     /**
      * Builds a new FSConfigSource.
-     * @param rootPath Root path to read from. Default is application root.
+     * @param rootPath Root path to read from. Default is process.cwd().
      * @param params Optional params object for miscellaneous config.
      * @constructor FSConfigSource
-     * @throws Error if rootPath is not a directory.
+     * @throws ENOTDIR if rootPath is not a directory or ENOENT if it does not exist.
      */
-    constructor(private rootPath: string = path.resolve(__dirname),
-                private params?: FSConfigSourceParams) {
-        if(fs.statSync(rootPath).isDirectory()) {
-            throw new Error('FSConfigSource: rootPath must be a directory.');
+    constructor(rootPath?: string, private params?: FSConfigSourceParams) {
+        // Custom root path
+        if(rootPath) {
+            this.rootPath = params?.relativeRootPath ? path.join(process.cwd(), rootPath) : rootPath;
+        }
+        // Default root path - process.cwd();
+        else {
+            this.rootPath = process.cwd();
+        }
+        // This will directly throw an ENOENT fs error if rootPath does not exist.
+        if(!fs.statSync(this.rootPath).isDirectory()) {
+            throw new Error(`ENOTDIR: FSConfigSource rootPath [${rootPath}] must be a directory.`);
         }
     }
 
@@ -53,7 +64,7 @@ export class FSConfigSource implements ConfigSource {
     public async readAll(): Promise<{[key: string]: Buffer  | undefined}> {
         const result: {[key: string]: Buffer  | undefined} = {};
         // Read root directory
-        for(const file in await this.list()) {
+        for(const file of await this.list()) {
             result[file] = await this.read(file);
         }
         return result;
@@ -76,16 +87,16 @@ export class FSConfigSource implements ConfigSource {
      * @param dir Relative path to a subdirectory.
      */
     private async listSubdir(dir?: string): Promise<string[]> {
-        const result: string[] = [];
+        let result: string[] = [];
         const tgtPath = dir ? path.join(this.rootPath, dir) : this.rootPath;
         // Read root directory.
-        for(const file in await fs.promises.readdir(tgtPath)) {
-            const stat = await fs.promises.stat(file);
+        for(const file of await fs.promises.readdir(tgtPath)) {
+            const stat = await fs.promises.stat(path.join(tgtPath, file));
             // Check if directory.
             if(stat.isDirectory()) {
                 // If recurse = true, recurse.
                 if(this.params?.recurse) {
-                    result.concat(await this.listSubdir(file));
+                    result = result.concat(await this.listSubdir(file));
                 }
                 // Else, skip subdirs.
                 else {
