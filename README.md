@@ -6,7 +6,9 @@
 
 A config source for accessing config stored on the filesystem.
 
-This package provides the `FSConfigSource` for use with the [Technician](https://www.npmjs.com/package/technician) config manager.
+This package provides the `FSConfigSource` for use with the [Technician](https://www.npmjs.com/package/technician) manager.
+
+[![Technician](https://img.shields.io/npm/v/technician?label=technician)](https://www.npmjs.com/package/technician)
 
 ## Installation
 

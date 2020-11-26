@@ -1,6 +1,6 @@
 {
 	"name": "@technician/fs-config-source",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Access config on your local filesystem with Technician.",
 	"keywords": [
 		"config",
