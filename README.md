@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/@technician/fs-config-source.svg)](https://www.npmjs.com/package/@technician/fs-config-source) [![npm downloads](https://img.shields.io/npm/dt/@technician/fs-config-source)](https://www.npmjs.com/package/@technician/fs-config-source) [![npm license](https://img.shields.io/npm/l/@technician/fs-config-source.svg)](https://www.npmjs.com/package/@technician/fs-config-source)
 
-[![dependencies](https://img.shields.io/david/carriejv/technician-fs-config-source.svg)](https://david-dm.org/carriejv/technician-fs-config-source) [![Build Status](https://img.shields.io/travis/com/carriejv/technician-fs-config-source.svg)](https://travis-ci.com/carriejv/technician-fs-config-source) [![GitKraken](https://img.shields.io/badge/<3-GitKraken-green.svg)](https://www.gitkraken.com/invite/om4Du5zG)
+[![dependencies](https://img.shields.io/david/carriejv/technician-fs-config-source.svg)](https://david-dm.org/carriejv/technician-fs-config-source) [![Build Status](https://github.com/carriejv/technician-env-config-source/workflows/ci-build/badge.svg?branch=master)](https://github.com/carriejv/technician-env-config-source/actions?query=workflow%3Aci-build) [![GitKraken](https://img.shields.io/badge/<3-GitKraken-green.svg)](https://www.gitkraken.com/invite/om4Du5zG)
 
 A config source for accessing config stored on the filesystem.
 
