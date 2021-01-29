@@ -49,17 +49,17 @@
 	"devDependencies": {
 		"@types/chai": "^4.2.14",
 		"@types/mocha": "^8.2.0",
-		"@types/node": "^14.14.16",
+		"@types/node": "^14.14.22",
 		"@types/sinon": "^9.0.10",
-		"@typescript-eslint/eslint-plugin": "^4.11.1",
-		"@typescript-eslint/parser": "^4.11.1",
+		"@typescript-eslint/eslint-plugin": "^4.14.1",
+		"@typescript-eslint/parser": "^4.14.1",
 		"chai": "^4.2.0",
-		"eslint": "^7.16.0",
+		"eslint": "^7.18.0",
 		"mocha": "^8.2.1",
 		"nyc": "^15.1.0",
-		"technician": "^1.0.1",
+		"technician": "^1.2.1",
 		"ts-node": "^9.1.1",
-		"typedoc": "^0.20.4",
+		"typedoc": "^0.20.19",
 		"typedoc-dark-theme": "0.0.11",
 		"typescript": "^4.1.3"
 	}
