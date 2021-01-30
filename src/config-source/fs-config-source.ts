@@ -41,7 +41,7 @@ export class FSConfigSource implements ConfigSource, ConfigSourceSync {
      * @throws Will throw errors from node `fs` if `throwErrors` is set.
      */
     public async read(key: string): Promise<Buffer | undefined> {
-        // Read in the target secret file
+        // Read in the target file
         try {
             return await fs.promises.readFile(path.join(this.rootPath, key));
         }
@@ -87,7 +87,7 @@ export class FSConfigSource implements ConfigSource, ConfigSourceSync {
      * @throws Will throw errors from node `fs` if `throwErrors` is set.
      */
     public readSync(key: string): Buffer | undefined {
-        // Read in the target secret file
+        // Read in the target file
         try {
             return fs.readFileSync(path.join(this.rootPath, key));
         }
