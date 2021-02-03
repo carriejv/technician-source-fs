@@ -1,14 +1,14 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { ConfigSource, ConfigSourceSync } from 'technician';
+import { ConfigSource } from 'technician';
 import { FSConfigSourceParams } from '../types/param-types';
 
 /**
  * A Technician ConfigSource for accessing the local filesystem.
- * The FSConfigSource uses filenames as default keys and returns
- * file contents as values.
+ * Keys: File names
+ * Type: Buffer
  */
-export class FSConfigSource implements ConfigSource, ConfigSourceSync {
+export class FSConfigSource implements ConfigSource<Buffer> {
 
     /** Root path for all file reads. */
     private rootPath: string;

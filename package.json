@@ -1,6 +1,6 @@
 {
-	"name": "@technician/fs-config-source",
-	"version": "1.0.3",
+	"name": "@technician/source-fs",
+	"version": "2.0.0",
 	"description": "Access config on your local filesystem with Technician.",
 	"keywords": [
 		"config",
@@ -31,12 +31,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/carriejv/technician-fs-config-source.git"
+		"url": "https://github.com/carriejv/technician-source-fs.git"
 	},
 	"bugs": {
-		"url": "https://github.com/carriejv/technician-fs-config-source/issues"
+		"url": "https://github.com/carriejv/technician-source-fs/issues"
 	},
-	"homepage": "https://github.com/carriejv/technician-fs-config-source",
+	"homepage": "https://github.com/carriejv/technician-source-fs",
 	"author": "Carrie Vrtis <carrie@carriejv.com> (https://www.carriejv.com)",
 	"contributors": [
 		"Carrie Vrtis <carrie@carriejv.com> (https://www.carriejv.com)"
@@ -51,15 +51,15 @@
 		"@types/mocha": "^8.2.0",
 		"@types/node": "^14.14.22",
 		"@types/sinon": "^9.0.10",
-		"@typescript-eslint/eslint-plugin": "^4.14.1",
-		"@typescript-eslint/parser": "^4.14.1",
+		"@typescript-eslint/eslint-plugin": "^4.14.2",
+		"@typescript-eslint/parser": "^4.14.2",
 		"chai": "^4.2.0",
-		"eslint": "^7.18.0",
+		"eslint": "^7.19.0",
 		"mocha": "^8.2.1",
 		"nyc": "^15.1.0",
-		"technician": "^1.2.1",
+		"technician": "^2.0.0",
 		"ts-node": "^9.1.1",
-		"typedoc": "^0.20.19",
+		"typedoc": "^0.20.20",
 		"typedoc-dark-theme": "0.0.11",
 		"typescript": "^4.1.3"
 	}

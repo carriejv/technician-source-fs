@@ -1,6 +1,6 @@
 import * as path from 'path';
 import { expect } from 'chai';
-import { Technician, TechnicianSync } from 'technician';
+import { Technician } from 'technician';
 import { FSConfigSource } from '../src';
 
 const TEST_DIR = 'test/resources';
@@ -13,23 +13,10 @@ describe('FSConfigSource', () => {
 
         it('should be readable via Technician as a ConfigSource.', async () => {
             // Build and configure Technician
-            const tech = new Technician();
-            tech.addSource(new FSConfigSource(TEST_DIR, {relativeRootPath: true}));
+            const tech = new Technician(new FSConfigSource(TEST_DIR, {relativeRootPath: true}));
 
             // Attempt a read through Technician
             const result = await tech.read('test.txt');
-
-            // Assertions
-            expect(result).to.deep.equal(EXPECTED_TEST_TXT);
-        });
-
-        it('should be readable via TechnicianSync as a ConfigSourceSync.', () => {
-            // Build and configure Technician
-            const tech = new TechnicianSync();
-            tech.addSource(new FSConfigSource(TEST_DIR, {relativeRootPath: true}));
-
-            // Attempt a read through Technician
-            const result = tech.read('test.txt');
 
             // Assertions
             expect(result).to.deep.equal(EXPECTED_TEST_TXT);
