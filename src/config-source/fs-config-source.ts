@@ -8,7 +8,7 @@ import { FSConfigSourceParams } from '../types/param-types';
  * Keys: File names
  * Type: Buffer
  */
-export class FSConfigSource implements ConfigSource<Buffer> {
+export class FSConfigSource extends ConfigSource<Buffer> {
 
     /** Root path for all file reads. */
     private rootPath: string;
@@ -21,6 +21,7 @@ export class FSConfigSource implements ConfigSource<Buffer> {
      * @throws ENOTDIR if rootPath is not a directory or ENOENT if it does not exist.
      */
     constructor(rootPath?: string, private params?: FSConfigSourceParams) {
+        super();
         // Custom root path
         if(rootPath) {
             this.rootPath = params?.relativeRootPath ? path.join(process.cwd(), rootPath) : rootPath;
