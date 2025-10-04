@@ -193,7 +193,7 @@ describe('FSConfigSource', () => {
                 // If this exists on any test environment, I'm scared.
                 new FSConfigSource('/a/b/1001/1002/foo/bar/baz');
             }
-            catch(err) {
+            catch(err: any) {
                 expect(err.message).to.contain('ENOENT');
                 return;
             }
@@ -204,7 +204,7 @@ describe('FSConfigSource', () => {
             try {
                 new FSConfigSource(path.join(process.cwd(), 'package.json'));
             }
-            catch(err) {
+            catch(err: any) {
                 expect(err.message).to.contain('ENOTDIR');
                 return;
             }
@@ -232,7 +232,7 @@ describe('FSConfigSource', () => {
                 try {
                     await fscs.read('nope.txt');
                 }
-                catch(err) {
+                catch(err: any) {
                     expect(err.message).to.contain('ENOENT');
                     return;
                 }
@@ -262,7 +262,7 @@ describe('FSConfigSource', () => {
                 try {
                     fscs.readSync('nope.txt');
                 }
-                catch(err) {
+                catch(err: any) {
                     expect(err.message).to.contain('ENOENT');
                     return;
                 }
